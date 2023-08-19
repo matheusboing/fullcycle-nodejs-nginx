@@ -12,3 +12,6 @@ pass: MYSQL_ROOT_PASSWORD
 ```
 use nodedb;
 ```
+```
+SELECT * FROM users;
+```
