@@ -1,4 +1,4 @@
-To access database and view data inserted after run the application:
+To access database and view the data inserted after run the application:
 
 ```
 docker exec -it db bash
