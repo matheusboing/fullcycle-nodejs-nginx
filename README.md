@@ -1,4 +1,5 @@
 This is a challenge proposed by the FullCycle course. It's a simple application using Docker knowledge, which runs a Node.js application using Nginx as a reverse proxy server. And after running the application, a data is inserted into the MySQL database.
+
 To run this application:
 ```
 docker-compose up --build
