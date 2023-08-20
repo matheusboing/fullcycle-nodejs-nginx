@@ -4,6 +4,10 @@ To run this application:
 ```
 docker-compose up --build
 ```
+And then, run in your localhost:
+```
+localhost:8080
+```
 To access database and view the data inserted after run the application:
 
 ```
