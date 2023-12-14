@@ -1,4 +1,4 @@
-version: '3'
+version: '3.6'
 
 services:
   node-app:
@@ -10,7 +10,12 @@ services:
     networks:
       - nodengx
     depends_on:
-      - db
+      - mysql
+    environment:
+      - WAIT_HOSTS=mysql:3306
+      - WAIT_HOSTS_TIMEOUT=300
+      - WAIT_SLEEP_INTERVAL=30
+      - WAIT_HOST_CONNECT_TIMEOUT=30
   
   nginx:
     build:
@@ -23,7 +28,7 @@ services:
     depends_on:
       - node-app
 
-  db:
+  mysql:
     image: mysql:5.7
     restart: always
     tty: true
@@ -36,6 +41,10 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=nodedb
+    ports:
+      - "3306:3306"
+    expose:
+      - 3306
 
 networks:
   nodengx:
